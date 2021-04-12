@@ -1,0 +1,10 @@
+# One CLI to format the code tree - https://github.com/numtide/treefmt
+
+[formatter.nix]
+command = "nixpkgs-fmt"
+includes = [ "*.nix" ]
+
+[formatter.shell]
+command = "shfmt"
+options = ["-w"]
+includes = [ "*.sh" ]
