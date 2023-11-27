@@ -8285,6 +8285,8 @@ self: super: with self; {
 
   nuitka = callPackage ../development/python-modules/nuitka { };
 
+  nudatus = callPackage ../development/python-modules/nudatus { };
+
   nuheat = callPackage ../development/python-modules/nuheat { };
 
   nulltype = callPackage ../development/python-modules/nulltype { };
