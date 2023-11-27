@@ -1,0 +1,40 @@
+From 5b071f8288cf19432a4020300a99c283e64a3a9d Mon Sep 17 00:00:00 2001
+From: DavHau <hsngrmpf+github@gmail.com>
+Date: Thu, 30 Nov 2023 21:16:04 +0700
+Subject: [PATCH] disable internal dependency management
+
+---
+ mu/virtual_environment.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/mu/virtual_environment.py b/mu/virtual_environment.py
+index 0c6087f..8c7f9d2 100644
+--- a/mu/virtual_environment.py
++++ b/mu/virtual_environment.py
+@@ -542,6 +542,7 @@ class VirtualEnvironment(object):
+             "Virtual environment set up %s at %s", self.name, self.path
+         )
+         self.settings["dirpath"] = self.path
++        self.interpreter = sys.executable
+ 
+     def run_python(self, *args, slots=Process.Slots()):
+         """
+@@ -638,6 +639,7 @@ class VirtualEnvironment(object):
+             self.install_user_packages(user_packages)
+ 
+     def ensure_and_create(self, emitter=None):
++        return
+         """Check whether we have a valid virtual environment in place and, if not,
+         create a new one. Allow a couple of tries in case we have temporary glitches
+         around the network, file contention etc.
+@@ -852,6 +854,7 @@ class VirtualEnvironment(object):
+             )
+ 
+     def create(self):
++        return
+         """Create a new virtualenv and install baseline packages & kernel
+ 
+         If a failure occurs, attempt to move the failed attempt out of the way
+-- 
+2.42.0
+

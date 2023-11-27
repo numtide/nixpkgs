@@ -33999,6 +33999,8 @@ with pkgs;
 
   mtpaint = callPackage ../applications/graphics/mtpaint { };
 
+  mu-editor = python3Packages.callPackage ../applications/editors/mu { };
+
   mu-repo = python3Packages.callPackage ../applications/misc/mu-repo { };
 
   multimarkdown = callPackage ../tools/typesetting/multimarkdown { };
